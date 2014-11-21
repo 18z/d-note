@@ -49,3 +49,7 @@ docker version
     Server API version: 1.15
     Go version (server): go1.3.3
     Git commit (server): 4e9bbfa
+    
+docker 安裝
+
+    https://docs.docker.com/installation/debian/
