@@ -12,11 +12,11 @@
 
     docker run -t -i ubuntu
 
-查看 container (exited 狀態)
+查看運行中的 container
 
     docker ps
 	
-查看運行中的 container
+查看 container (exited 狀態)
 
     docker ps -l
 	
@@ -37,6 +37,11 @@ docker push
 
     docker login
     docker push deanboole/ubuntu:kyc2
+    
+docker pull
+
+		docker login
+		docker pull deanboole/ubuntu:kyc2
 
 docker version
 
