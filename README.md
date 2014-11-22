@@ -30,7 +30,7 @@ attach container (須先喚醒 container)
 	
 docker cmmit
 
-    docker commit b878e78d5592 deanboole/ubuntu:kyc2
+    docker commit b878e78d5592(container id) deanboole/ubuntu:kyc2
     # 可用  docker images 查看是否有成功 commit
 	
 docker push
