@@ -1,73 +1,73 @@
-### docker 操作筆記
+## docker 操作筆記
 
-下載image
+### IMAGE
 
-    docker pull ubuntu
+```bash
+# 下載image
+$ docker pull ubuntu
 
-查看 image 有哪些
+# 查看 image 有哪些
 
-    docker image
+$ docker image
+```
 
-執行一次性指令
+### 讓 container 執行指令
 
-    docker run ubuntu echo "hello"
+```bash
+# 執行一次性指令
+$ docker run ubuntu echo "hello"
 
-互動式操作環境
+# 互動式操作環境
+$ docker run -t -i ubuntu
+```
 
-    docker run -t -i ubuntu
+### 查看 container 狀態或處理 container
 
-查看運行中的 container
+```bash
+# 查看運行中的 container
+$ docker ps
 
-    docker ps
+# 查看 container (exited 狀態)
+$ docker ps -l
 
-查看 container (exited 狀態)
+# 喚醒 exited 狀態 container
+$ docker start container_id
 
-    docker ps -l
+# attach container (須先喚醒 container)
+$ docker attach container_id
 
-喚醒 exited 狀態 container
+# 刪除 container
+$ docker rm container_id
+```
 
-    docker start container_id
+### 客製化 images
 
-attach container (須先喚醒 container)
+```bash
+# docker commit 可用  docker images 查看是否有成功 commit
+$ docker commit b878e78d5592(container id) deanboole/ubuntu:kyc2
 
-    docker attach container_id
+# docker push
+$ docker login
+$ docker push deanboole/ubuntu:kyc2
 
-刪除 container
+# docker pull
+$ docker login
+$ docker pull deanboole/ubuntu:kyc2
+```
 
-    docker rm container_id
+### 安裝
 
-docker cmmit
+```
+debian
+https://docs.docker.com/installation/debian/
 
-    docker commit b878e78d5592(container id) deanboole/ubuntu:kyc2
-    # 可用  docker images 查看是否有成功 commit
+mac os
+https://github.com/boot2docker/osx-installer
+```
 
-docker push
-
-    docker login
-    docker push deanboole/ubuntu:kyc2
-
-docker pull
-
-        docker login
-        docker pull deanboole/ubuntu:kyc2
-
-docker version
-
-    Client version: 1.3.1
-    Client API version: 1.15
-    Go version (client): go1.3.3
-    Git commit (client): 4e9bbfa
-    OS/Arch (client): linux/amd64
-    Server version: 1.3.1
-    Server API version: 1.15
-    Go version (server): go1.3.3
-    Git commit (server): 4e9bbfa
-
-docker 安裝
-
-    https://docs.docker.com/installation/debian/
-
-docker 啟動
-
-    boot2docker start
-    eval "$(boot2docker shellinit)"
+### docker 啟動
+```bash
+# mac os
+$ boot2docker start
+$ eval "$(boot2docker shellinit)"
+```
