@@ -7,7 +7,7 @@
 $ docker pull deanboole/gcc
 
 # 查看 image 有哪些
-$ docker image
+$ docker images
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 deanboole/gcc       gcc5-1              d3f73fef10cf        2 minutes ago       1.153 GB
